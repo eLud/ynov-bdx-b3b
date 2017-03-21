@@ -6,4 +6,10 @@
 //  Copyright © 2017 Ludovic Ollagnier. All rights reserved.
 //
 
-import Foundation
+protocol BoissonAlcolisée {
+    
+    var quantité: Float { get set }
+    var degréAlcool: Float { get }
+    func boire()
+    func remplir()
+}
