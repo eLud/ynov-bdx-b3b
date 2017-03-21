@@ -38,6 +38,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="80" maxValue="140" translatesAutoresizingMaskIntoConstraints="NO" id="ujj-42-bqy">
                                 <rect key="frame" x="62" y="105" width="179" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="selectedSizeDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="qJe-X7-IyT"/>
+                                </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ooe-1m-7fb">
                                 <rect key="frame" x="16" y="172" width="288" height="29"/>
@@ -93,6 +96,7 @@
                     <connections>
                         <outlet property="ethylicResistanceSegmentedControl" destination="Ooe-1m-7fb" id="x1K-mL-Dkf"/>
                         <outlet property="nameTextField" destination="k2L-nu-SoN" id="Qvc-ut-KJY"/>
+                        <outlet property="selectedSizeLabel" destination="tNi-ZO-WXz" id="tqn-Il-fLI"/>
                         <outlet property="sizeLabel" destination="tNi-ZO-WXz" id="91p-sW-YlO"/>
                         <outlet property="sizeSlider" destination="ujj-42-bqy" id="r3w-Pa-gd6"/>
                     </connections>

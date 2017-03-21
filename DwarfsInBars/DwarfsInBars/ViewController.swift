@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var sizeSlider: UISlider!
     @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var selectedSizeLabel: UILabel!
     @IBOutlet weak var ethylicResistanceSegmentedControl: UISegmentedControl!
     
     private var bar = Bar()
@@ -41,6 +42,14 @@ class ViewController: UIViewController {
     @IBAction func list(_ sender: Any) {
         
         print(bar.clients)
+    }
+    
+    @IBAction func selectedSizeDidChange(_ sender: UISlider) {
+        
+        let intSize = Int(sender.value)
+        sender.value = Float(intSize)
+        
+        selectedSizeLabel.text = "\(intSize) cm"
     }
 }
 
