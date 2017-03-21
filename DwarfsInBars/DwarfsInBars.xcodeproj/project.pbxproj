@@ -13,6 +13,10 @@
 		33FBC21B1E817983005CA575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FBC21A1E817983005CA575 /* Assets.xcassets */; };
 		33FBC21E1E817983005CA575 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33FBC21C1E817983005CA575 /* LaunchScreen.storyboard */; };
 		33FBC2291E817983005CA575 /* DwarfsInBarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC2281E817983005CA575 /* DwarfsInBarsTests.swift */; };
+		33FBC23B1E818B00005CA575 /* Nain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC23A1E818B00005CA575 /* Nain.swift */; };
+		33FBC23D1E818B07005CA575 /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC23C1E818B07005CA575 /* Bar.swift */; };
+		33FBC23F1E818B12005CA575 /* Tonneau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC23E1E818B12005CA575 /* Tonneau.swift */; };
+		33FBC2411E818B9F005CA575 /* BoissonAlcolisée.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC2401E818B9F005CA575 /* BoissonAlcolisée.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		33FBC2241E817983005CA575 /* DwarfsInBarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DwarfsInBarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FBC2281E817983005CA575 /* DwarfsInBarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DwarfsInBarsTests.swift; sourceTree = "<group>"; };
 		33FBC22A1E817983005CA575 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33FBC23A1E818B00005CA575 /* Nain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nain.swift; sourceTree = "<group>"; };
+		33FBC23C1E818B07005CA575 /* Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		33FBC23E1E818B12005CA575 /* Tonneau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tonneau.swift; sourceTree = "<group>"; };
+		33FBC2401E818B9F005CA575 /* BoissonAlcolisée.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BoissonAlcolisée.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				33FBC2131E817983005CA575 /* AppDelegate.swift */,
-				33FBC2151E817983005CA575 /* ViewController.swift */,
+				33FBC2381E818AE2005CA575 /* Controllers */,
+				33FBC2391E818AF0005CA575 /* Models */,
 				33FBC2171E817983005CA575 /* Main.storyboard */,
 				33FBC21A1E817983005CA575 /* Assets.xcassets */,
 				33FBC21C1E817983005CA575 /* LaunchScreen.storyboard */,
@@ -94,6 +103,25 @@
 				33FBC22A1E817983005CA575 /* Info.plist */,
 			);
 			path = DwarfsInBarsTests;
+			sourceTree = "<group>";
+		};
+		33FBC2381E818AE2005CA575 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				33FBC2151E817983005CA575 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		33FBC2391E818AF0005CA575 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33FBC23A1E818B00005CA575 /* Nain.swift */,
+				33FBC23C1E818B07005CA575 /* Bar.swift */,
+				33FBC23E1E818B12005CA575 /* Tonneau.swift */,
+				33FBC2401E818B9F005CA575 /* BoissonAlcolisée.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33FBC23F1E818B12005CA575 /* Tonneau.swift in Sources */,
+				33FBC23B1E818B00005CA575 /* Nain.swift in Sources */,
+				33FBC23D1E818B07005CA575 /* Bar.swift in Sources */,
+				33FBC2411E818B9F005CA575 /* BoissonAlcolisée.swift in Sources */,
 				33FBC2161E817983005CA575 /* ViewController.swift in Sources */,
 				33FBC2141E817983005CA575 /* AppDelegate.swift in Sources */,
 			);
@@ -412,6 +444,7 @@
 				33FBC22F1E817983005CA575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33FBC2301E817983005CA575 /* Build configuration list for PBXNativeTarget "DwarfsInBarsTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +453,7 @@
 				33FBC2321E817983005CA575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
