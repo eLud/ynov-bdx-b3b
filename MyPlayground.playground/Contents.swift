@@ -57,6 +57,8 @@ class Nain {
     }
     
 //: Par défaut, les méthodes exposent les noms des paramètres lors de l'appel. On peut intervenir sur ce comportement en proposant un autre nom, ou en choisissant de le masquer.
+    
+    /// Cette méthode déclenche une attaque
     func attaque(_ opposant: Nain, avec arme: String, force: Int) -> Int {
         
         return 0
@@ -74,6 +76,7 @@ class Nain {
 //: On utilise souvent des extensions pour rajouter des conformités à des protocoles
 //: Le protocole Equatable permet de définir l'égalité de valeur entre deux nains
 extension Nain: Equatable {
+    
     static func ==(lhs: Nain, rhs: Nain) -> Bool {
         if lhs.nom == rhs.nom && lhs.taille == rhs.taille {
             return true
@@ -168,10 +171,10 @@ t2.volumeRestant
 
 class Bar {
     
-    var nains: [Nain] = []
-    var tonneaux: [Tonneau] = Array(repeating: Tonneau.bière, count: 20)
+    private var nains: [Nain] = []
+    private var tonneaux: [Tonneau] = Array(repeating: Tonneau.bière, count: 20)
     
-    func ajouter(nain: Nain) {
+    func ajouter(_ nain: Nain) {
         nains.append(nain)
     }
 
@@ -182,10 +185,10 @@ class Bar {
     
     // Retourner un Nain? permet de retourner soit un nain, soit rien (nil). Nain? est un Optional<Nain>.
     func virer(nain: Nain) -> Nain? {
-        guard let index = nains.index(of: nain) else {
-            return nil
-        }
-        return nains.remove(at: index)
+        
+        guard let index = nains.index(of: nain) else { return nil }
+        let nainViré = nains.remove(at: index)
+        return nainViré
     }
     
     func payerUneTournée(tonneauxParNain: Int) {
@@ -218,8 +221,13 @@ let taverne = Bar()
 let unInconnu = Nain()
 let gimli = Nain(nom: "Gimli", taille: 130, resistance: 10)
 
-taverne.ajouter(nain: gimli)
-taverne.ajouter(nain: unInconnu)
+gimli.attaque(unInconnu, avec: "Hache", force: 5)
 
+taverne.clients
+taverne.ajouter(gimli)
+taverne.ajouter(unInconnu)
+
+taverne.virer(nain: gimli)
+taverne.virer(nain: gimli)
 taverne.clients
 taverne.payerUneTournée(tonneauxParNain: 2)
