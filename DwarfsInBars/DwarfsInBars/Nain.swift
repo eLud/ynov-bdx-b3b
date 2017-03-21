@@ -8,17 +8,21 @@
 
 class Nain {
     
+    enum ResistanceEthylique: Int {
+        case nulle, faible, moyenne, bonne, exceptionelle
+    }
+    
     var taille: Float
     let nom: String
-    var resistanceEthylique: Int
+    var resistanceEthylique: ResistanceEthylique
     
     init() {
         taille = 130
         nom = "Gworlf"
-        resistanceEthylique = 4
+        resistanceEthylique = .moyenne
     }
     
-    init(nom: String, taille: Float, resistance: Int) {
+    init(nom: String, taille: Float, resistance: ResistanceEthylique) {
         self.nom = nom
         self.taille = taille
         resistanceEthylique = resistance
