@@ -210,7 +210,7 @@ class Bar {
 
 //: En private, cette méthode n'est accessible que depuis l'intérieur de la classe.
     private func servir(nain: Nain, boisson: BoissonAlcolisée) {
-        nain.boire(boisson: t)
+        nain.boire(boisson: boisson)
     }
     
 //: - note: Les modificateurs de portée en Swift sont open > public > internal > fileprivate > private
