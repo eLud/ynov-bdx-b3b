@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var ethylicResistanceSegmentedControl: UISegmentedControl!
     
+    private var bar = Bar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,9 +28,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add(_ sender: Any) {
+        
+        guard let name = nameTextField.text else { return }
+        let size = sizeSlider.value
+        let ethylicIndex = ethylicResistanceSegmentedControl.selectedSegmentIndex
+        guard let ethylicResistance = Nain.ResistanceEthylique(rawValue: ethylicIndex) else { return }
+        
+        let nain = Nain(nom: name, taille: size, resistance: ethylicResistance)
+        bar.ajouter(nain)
     }
     
     @IBAction func list(_ sender: Any) {
+        
+        print(bar.clients)
     }
 }
 
