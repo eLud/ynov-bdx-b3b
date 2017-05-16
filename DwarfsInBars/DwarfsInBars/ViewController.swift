@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var listBtton: UIButton!
     @IBOutlet weak var sizeSlider: UISlider!
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var selectedSizeLabel: UILabel!
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +33,7 @@ class ViewController: UIViewController {
     @IBAction func add(_ sender: Any) {
         
         guard let name = nameTextField.text else { return }
+
         let size = sizeSlider.value
         let ethylicIndex = ethylicResistanceSegmentedControl.selectedSegmentIndex
         guard let ethylicResistance = Nain.ResistanceEthylique(rawValue: ethylicIndex) else { return }
