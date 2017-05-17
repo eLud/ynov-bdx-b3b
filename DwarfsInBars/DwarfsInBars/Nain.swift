@@ -10,6 +10,25 @@ class Nain {
     
     enum ResistanceEthylique: Int {
         case nulle, faible, moyenne, bonne, exceptionelle
+        
+        static var count: Int {
+            return 5
+        }
+        
+        var stringValue: String {
+            switch self {
+            case .nulle:
+                return "Nulle"
+            case .faible:
+                return "Faible"
+            case .moyenne:
+                return "Moyenne"
+            case .bonne:
+                return "Bonne"
+            case .exceptionelle:
+                return "Exceptionnelle"
+            }
+        }
     }
     
     var taille: Float

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -62,21 +63,36 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.31764705879999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jus-ie-oLs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom" id="jus-ie-oLs" customClass="CustomDwarfTableViewCell" customModule="DwarfsInBars" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jus-ie-oLs" id="Ob8-T8-VUr">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drdljvfjlbvybfhd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogv-TA-L4W">
+                                            <rect key="frame" x="8" y="12" width="121" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TP6-92-D7z">
+                                            <rect key="frame" x="187.5" y="21" width="179.5" height="2"/>
+                                        </progressView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TP6-92-D7z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ogv-TA-L4W" secondAttribute="trailing" constant="8" id="Knj-oh-aFC"/>
+                                        <constraint firstItem="TP6-92-D7z" firstAttribute="trailing" secondItem="Ob8-T8-VUr" secondAttribute="trailingMargin" id="SPs-Dp-gIc"/>
+                                        <constraint firstItem="TP6-92-D7z" firstAttribute="width" secondItem="Ob8-T8-VUr" secondAttribute="width" multiplier="0.5" priority="750" constant="-8" id="aKP-Tc-XUV"/>
+                                        <constraint firstItem="TP6-92-D7z" firstAttribute="centerY" secondItem="ogv-TA-L4W" secondAttribute="centerY" id="m0l-1O-75a"/>
+                                        <constraint firstItem="ogv-TA-L4W" firstAttribute="centerY" secondItem="Ob8-T8-VUr" secondAttribute="centerY" id="vlM-Tk-hnh"/>
+                                        <constraint firstItem="ogv-TA-L4W" firstAttribute="leading" secondItem="Ob8-T8-VUr" secondAttribute="leadingMargin" id="vr5-xd-uz8"/>
+                                    </constraints>
                                 </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vcd-3r-vXY">
-                                <rect key="frame" x="0.0" y="160" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vcd-3r-vXY" id="F65-dS-2Nh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dwarfNameLabel" destination="ogv-TA-L4W" id="ppx-0h-pcH"/>
+                                    <outlet property="ethyicprogressView" destination="TP6-92-D7z" id="DRJ-lA-sXi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

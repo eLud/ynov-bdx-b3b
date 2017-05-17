@@ -9,9 +9,19 @@
 import UIKit
 
 class BarClientsTableViewController: UITableViewController {
+    
+    var bar = Bar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in 0...50 {
+            
+            let randomInt = Int(arc4random_uniform(UInt32(Nain.ResistanceEthylique.count - 1)))
+            
+            let n = Nain(nom: "Nain n°\(i)", taille: 40.6, resistance: Nain.ResistanceEthylique(rawValue: randomInt)!)
+            bar.ajouter(n)
+        }
 
     }
 
@@ -24,21 +34,28 @@ class BarClientsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 100
+        return bar.clients.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dwarfCell", for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "custom", for: indexPath) as? CustomDwarfTableViewCell else { fatalError() }
 
         // Configure the cell...
-        cell.textLabel?.text = "Toto"
+        let currentDwarf = bar.clients[indexPath.row]
         
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.red
-        } else {
-            cell.backgroundColor = UIColor.green
-        }
+        cell.dwarfNameLabel.text = currentDwarf.nom
+        
+        let progress = Float(currentDwarf.resistanceEthylique.rawValue) / 4.0
+        
+        cell.ethyicprogressView.progress = progress
+        
+//        if indexPath.row % 2 == 0 {
+//            cell.backgroundColor = UIColor.red
+//        } else {
+//            cell.backgroundColor = UIColor.green
+//        }
         
         return cell
     }
