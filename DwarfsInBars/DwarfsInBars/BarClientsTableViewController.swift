@@ -15,7 +15,12 @@ class BarClientsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 0...50 {
+        let notCenter = NotificationCenter.default
+        notCenter.addObserver(forName: Notification.Name("modelUpdated"), object: nil, queue: OperationQueue.main) { (notif) in
+            self.tableView.reloadData()
+        }
+        
+        for i in 0...10 {
             
             let randomInt = Int(arc4random_uniform(UInt32(Nain.ResistanceEthylique.count - 1)))
             
@@ -96,14 +101,30 @@ class BarClientsTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
+        // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showDetails" {
+            let destination = segue.destination as! DwarfDetailsViewController
+            
+            guard let cell = sender as? CustomDwarfTableViewCell else { return }
+            guard let index = tableView.indexPath(for: cell)?.row else { return }
+            
+            let nain = bar.clients[index]
+            destination.dwarfToDisplay = nain
+            
+        } else if segue.identifier == "showForm" {
+            
+            let destination = segue.destination as! ViewController
+            destination.bar = self.bar
+            
+        }
     }
-    */
+
 
 }

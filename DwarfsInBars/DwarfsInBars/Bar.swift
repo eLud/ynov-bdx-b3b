@@ -6,6 +6,8 @@
 //  Copyright © 2017 Ludovic Ollagnier. All rights reserved.
 //
 
+import Foundation
+
 class Bar {
     
     private var nains: [Nain] = []
@@ -13,6 +15,9 @@ class Bar {
     
     func ajouter(_ nain: Nain) {
         nains.append(nain)
+        
+        let notCenter = NotificationCenter.default
+        notCenter.post(name: Notification.Name("modelUpdated"), object: self)
     }
     
     //: Une propriété calculée peut être en "get only", dans ce cas, on peut ne pas mettre le get {}

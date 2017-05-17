@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rx0-FY-1Nu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="abN-pc-Ah3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,10 +8,27 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bar Clients Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="gwK-wq-0ih">
+            <objects>
+                <navigationController id="abN-pc-Ah3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oSd-3T-bOT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rx0-FY-1Nu" kind="relationship" relationship="rootViewController" id="SRG-gj-AAr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fo0-Ry-swg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1940" y="88"/>
+        </scene>
+        <!--Clients-->
         <scene sceneID="A2e-ns-Iro">
             <objects>
                 <tableViewController id="rx0-FY-1Nu" customClass="BarClientsTableViewController" customModule="DwarfsInBars" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,6 +109,10 @@
                                 <connections>
                                     <outlet property="dwarfNameLabel" destination="ogv-TA-L4W" id="ppx-0h-pcH"/>
                                     <outlet property="ethyicprogressView" destination="TP6-92-D7z" id="DRJ-lA-sXi"/>
+                                    <segue destination="U1A-lV-KhU" kind="show" identifier="showDetails" id="FlS-yM-prS">
+                                        <segue key="commit" inheritsFrom="parent" id="eb0-4W-WsF"/>
+                                        <segue key="preview" inheritsFrom="commit" id="VVa-Ke-VZ1"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -100,6 +121,13 @@
                             <outlet property="delegate" destination="rx0-FY-1Nu" id="1QO-J7-xSO"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Clients" id="sia-Zn-cJR">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ASx-Fo-dRO">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="showForm" modalTransitionStyle="flipHorizontal" id="qYO-8h-zwk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHe-Zs-x7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,7 +263,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.875" y="38.028169014084504"/>
+            <point key="canvasLocation" x="23" y="-211"/>
+        </scene>
+        <!--Dwarf Details View Controller-->
+        <scene sceneID="GS5-QQ-Gma">
+            <objects>
+                <viewController id="U1A-lV-KhU" customClass="DwarfDetailsViewController" customModule="DwarfsInBars" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J1Z-Cg-gTb"/>
+                        <viewControllerLayoutGuide type="bottom" id="ctZ-E8-Z1B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EqQ-Nt-akW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTi-8Q-aRq">
+                                <rect key="frame" x="143" y="283" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="XiN-3I-yEd" kind="show" id="4ee-My-78j">
+                                        <segue key="commit" inheritsFrom="parent" id="HZ2-h0-qae"/>
+                                        <segue key="preview" inheritsFrom="commit" id="jwA-va-Ipf"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.26478407120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0zp-1j-N87" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="442"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n5y-CQ-Bfa">
+            <objects>
+                <viewController id="XiN-3I-yEd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g0Q-fr-JEr"/>
+                        <viewControllerLayoutGuide type="bottom" id="QRx-FE-Egb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K3q-b3-BvD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.62585429100000001" blue="0.23270364809999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Feq-sk-ahu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="404"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FlS-yM-prS"/>
+        <segue reference="4ee-My-78j"/>
+    </inferredMetricsTieBreakers>
 </document>

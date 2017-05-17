@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var selectedSizeLabel: UILabel!
     @IBOutlet weak var ethylicResistanceSegmentedControl: UISegmentedControl!
     
-    private var bar = Bar()
+    var bar: Bar?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     
     @IBAction func add(_ sender: Any) {
         
+        guard let bar = bar else { fatalError("No Bar model provided") }
         guard let name = nameTextField.text else { return }
 
         let size = sizeSlider.value
@@ -40,11 +41,13 @@ class ViewController: UIViewController {
         
         let nain = Nain(nom: name, taille: size, resistance: ethylicResistance)
         bar.ajouter(nain)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func list(_ sender: Any) {
         
-        print(bar.clients)
+        print(bar?.clients)
     }
     
     @IBAction func selectedSizeDidChange(_ sender: UISlider) {
