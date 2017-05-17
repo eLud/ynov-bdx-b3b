@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3386DC8F1ECC2C2A0020DC44 /* BarClientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386DC8E1ECC2C2A0020DC44 /* BarClientsTableViewController.swift */; };
 		33FBC2141E817983005CA575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC2131E817983005CA575 /* AppDelegate.swift */; };
 		33FBC2161E817983005CA575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FBC2151E817983005CA575 /* ViewController.swift */; };
 		33FBC2191E817983005CA575 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33FBC2171E817983005CA575 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3386DC8E1ECC2C2A0020DC44 /* BarClientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarClientsTableViewController.swift; sourceTree = "<group>"; };
 		33FBC2101E817983005CA575 /* DwarfsInBars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwarfsInBars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FBC2131E817983005CA575 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33FBC2151E817983005CA575 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				33FBC2151E817983005CA575 /* ViewController.swift */,
+				3386DC8E1ECC2C2A0020DC44 /* BarClientsTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				33FBC23B1E818B00005CA575 /* Nain.swift in Sources */,
 				33FBC23D1E818B07005CA575 /* Bar.swift in Sources */,
 				33FBC2411E818B9F005CA575 /* BoissonAlcolisée.swift in Sources */,
+				3386DC8F1ECC2C2A0020DC44 /* BarClientsTableViewController.swift in Sources */,
 				33FBC2161E817983005CA575 /* ViewController.swift in Sources */,
 				33FBC2141E817983005CA575 /* AppDelegate.swift in Sources */,
 			);
